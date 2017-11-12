@@ -1,0 +1,4 @@
+{
+  "tests/plan_test.py::test_comparadorBTP": true,
+  "tests/plan_test.py::test_comparadorSBT": true
+}

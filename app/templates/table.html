@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block title %}A planilha foi filtrada com sucesso!{% endblock %}
+{% block content %}
+<div class="table-responsive w3-container">
+    <div class="w3-row">
+        <div class="w3-col m12 l13">
+            <table class="table table-responsive">
+                <tbody>
+                <tr>
+                    {% for name in fieldnames %}
+                    <th>{{ name}}</th>
+                    {% endfor %}
+                </tr>
+                {% for linha in result_dict %}
+                <tr>
+                    {% for key, value in linha.items() %}
+                    <td>{% if value[1] == True %}<b>{% endif %}
+                        {{value[0]}}
+                        {% if value[1] == True %}</b>{% endif %}
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
